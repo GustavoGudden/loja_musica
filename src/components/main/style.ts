@@ -1,5 +1,9 @@
 import styled from "styled-components"
 
+const media = {
+  desktop: "@media(min-width:1024px)",
+}
+
 export const MainWrapper = styled.main`
   display: flex;
   flex-direction: column;
@@ -15,6 +19,10 @@ export const BannerArea = styled.div`
   width: 100%;
   height: 300px;
 
+  ${media.desktop} {
+    height: 400px;
+  }
+
   div {
     display: flex;
     padding: 7px;
@@ -27,6 +35,12 @@ export const BannerArea = styled.div`
     height: 45%;
     color: white;
 
+    ${media.desktop} {
+      width: 30%;
+      margin-top: 4rem;
+      margin-right: 4rem;
+    }
+
     h1 {
       font-size: 45px;
       font-weight: bold;
@@ -38,8 +52,21 @@ export const BannerArea = styled.div`
     }
   }
 `
+export const CardArea = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
 
-export const CardArea = styled.div<{ img: string }>`
+  ${media.desktop} {
+    flex-direction: row;
+    gap: 7px;
+    padding: 7px;
+    margin: 7px;
+  }
+`
+
+export const Card = styled.div<{ img: string; flex: string }>`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -54,6 +81,10 @@ export const CardArea = styled.div<{ img: string }>`
   color: white;
   margin-bottom: 7px;
 
+  ${media.desktop} {
+    flex: ${(props) => props.flex};
+  }
+
   > button {
     color: #fff;
     padding: 7px;
@@ -65,6 +96,22 @@ export const CardArea = styled.div<{ img: string }>`
     :hover {
       background-color: white;
       color: black;
+    }
+  }
+`
+export const EmphasisArea = styled.div`
+  width: 100%;
+  padding: 1rem;
+
+  .divisor {
+    align-items: center;
+    width: 100%;
+    display: flex;
+    gap: 7px;
+    > div {
+      width: 50%;
+      height: 0;
+      border: 1px solid black;
     }
   }
 `

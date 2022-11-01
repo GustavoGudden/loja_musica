@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body{
+  background-color: #24222b;
   font-family: 'Roboto', sans-serif;
 }
 
